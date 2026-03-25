@@ -1,5 +1,3 @@
-# SystemR
-
 <img width="612" height="408" alt="Image" src="https://github.com/user-attachments/assets/5d23bed5-6f11-485a-a506-5db6f19aa10f" />
 
 SystemR is a modified Arch Linux live cd. It is build as a rescue tool. I was looking for a Live CD to install Arch Linux.  I decided to build my own rescue tool, after I realized how easy it is to compile and customize your own Arch Linux iso.
