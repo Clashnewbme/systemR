@@ -6,16 +6,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    container:
+      image: archlinux:latest
+
     steps:
       - uses: actions/checkout@v4
 
-      - run: sudo apt update && sudo apt install -y archiso
+      - name: Install dependencies
+        run: |
+          pacman -Sy --noconfirm archiso
 
-      - run: chmod +x build.sh
+      - name: Build ISO
+        run: |
+          chmod +x build.sh
+          ./build.sh
 
-      - run: sudo ./build.sh
-
-      - uses: actions/upload-artifact@v4
+      - name: Upload ISO
+        uses: actions/upload-artifact@v4
         with:
           name: iso
           path: out/*.iso
